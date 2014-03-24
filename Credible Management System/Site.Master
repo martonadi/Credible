@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CredentialsDemo.SiteMaster" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>Credentials Management System</title>
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0)" />
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=0)" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/ComboBox.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Calendar.Outlook.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="jqueryslidemenu.css" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jqueryslidemenu.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-1.4.1.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/Credentials.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page" runat="server" id="txt">
+        <table cellpadding="0" cellspacing="2" width="100%" border="0" style="background-color: RGB(0,117,154);">
+            <tr>
+                <td style="background-color: RGB(0,117,154);">
+                    <div class="header">
+                        <div class="title">
+                            Credentials Management System
+                        </div>
+                    </div>
+                </td>
+                <td style="padding-right: 5px; padding-bottom: 2px;">
+                    <%-- <asp:Image ID="IMG1" ImageUrl="~/Images/CMS_LawTax_Negative1.png" runat="server"
+                        ImageAlign="Right" />--%>
+                    <asp:Image ID="Image1" ImageUrl="~/Images/1CMS_LawTax_Negative copy.png" runat="server"
+                        ImageAlign="Right" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border-top-style: solid; border-top-width: 1px; border-top-color: gray;
+                    border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: gray;">
+                    <div id="myslidemenu" class="jqueryslidemenu">
+                        <ul>
+                            <li runat="server" id="lnkHome" visible="false"><a runat="server" href="~/SEARCH/SearchScreen.aspx">
+                                Home</a></li>
+                            <li runat="server" id="lnkEntry"><a runat="server" href="~/EntryDetails.aspx?a=1">Entry
+                                Screen </a></li>
+                            <li runat="server" id="lnkSearch"><a runat="server" href="~/SEARCH/SearchScreen.aspx?a=2">
+                                Search </a></li>
+                            <li runat="server" id="lnkUserUserCreation"><a runat="server" href="~/ADMIN/UserCreation.aspx">
+                                User Access</a></li>
+                            <li runat="server" id="lnkDataCreation"><a runat="server" href="~/ADMIN/AdminDropdown.aspx">
+                                Manage Data </a></li>
+                        </ul>
+                        <br style="clear: left" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: gray;
+                    padding-left: 10px;">
+                    <asp:Label ID="lbluserName" Text="Welcome" runat="server" CssClass="labelStyleName">
+                    </asp:Label>
+                    <asp:Label ID="Label3" Text=" - " runat="server" CssClass="labelStyleName">
+                    </asp:Label>
+                    <asp:Label ID="lblRole" Text="" runat="server" CssClass="labelStyleName">
+                    </asp:Label>
+                </td>
+                <td align="right" style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: gray;
+                    padding-right: 5px;">
+                    <asp:Label ID="Label1" Text="Visitor Count :: " runat="server" CssClass="labelStyleName">
+                    </asp:Label>
+                    <asp:Label ID="lblVisitorCount" Text="" runat="server" CssClass="labelStyleName">
+                    </asp:Label>
+                </td>
+            </tr>
+        </table>
+        <div class="main" id="master_content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+    </div>
+    <div class="footer">
+        <asp:Label runat="server" ID="dd" ForeColor="Ivory" Font-Bold="true" Font-Size="X-Small">Powered by HCL Technologies Limited</asp:Label>
+    </div>
+    </form>
+</body>
+</html>

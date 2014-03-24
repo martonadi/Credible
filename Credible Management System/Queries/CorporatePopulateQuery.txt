@@ -1,0 +1,96 @@
+﻿SELECT     
+
+CredentialId AS CredentialID,
+
+
+dbo.udf_GetCredentialWorkTypeScalar(C.CredentialId) as [CorporateWorkTypeValue],
+dbo.udf_GetCredentialWorkTypeVector(C.CredentialId) as [CorporateWorkTypeId],
+--dbo.udf_GetCredentialSubWorkTypeCORPORATEScalar(C.CredentialId) as [CorporateSubWorkType],
+dbo.udf_GetCredentialActingForScalar(C.CredentialId) as [CorporateActingForValue],
+dbo.udf_GetCredentialActingForVector(C.CredentialId) as [CorporateActingForId],
+dbo.udf_GetCredentialCountryBuyerScalar(C.CredentialId) as [CorporateCountryBuyerValue],
+dbo.udf_GetCredentialCountryBuyerVector(C.CredentialId) as [CorporateCountryBuyerId],
+dbo.udf_GetCredentialCountrySellerScalar(C.CredentialId) as [CorporateCountrySellerValue],
+dbo.udf_GetCredentialCountrySellerVector(C.CredentialId) as [CorporateCountrySellerId],
+dbo.udf_GetCredentialCountryTargetScalar(C.CredentialId) as [CorporateCountryTargetValue],
+dbo.udf_GetCredentialCountryTargetVector(C.CredentialId) as [CorporateCountryTargetId],
+
+--Value_Over_US AS ValueOverUS1, 
+/*(CASE When C.Value_Over_US=1 THEN 'Yes' 
+When C.Value_Over_US=0 Then 'No' 
+END)AS [ValueOverUS],*/
+dbo.udf_GetCredentialDollarValueScalar(C.CredentialId) as [ValueOverUS],
+dbo.udf_GetCredentialDollarValueVector(C.CredentialId) as [ValueOverUSID],
+
+
+--Value_Over_Pound AS ValueOverPound1, 
+/*(CASE When C.Value_Over_Pound=1 THEN 'Yes'
+When C.Value_Over_Pound=0 Then 'No' 
+END)AS [ValueOverPound],*/
+dbo.udf_GetCredentialPoundValueScalar(C.CredentialId) as [ValueOverPound],
+dbo.udf_GetCredentialPoundValueVector(C.CredentialId) as [ValueOverPoundID],
+
+
+--Value_Over_Euro AS ValueOverEuro1, 
+/*(CASE When C.Value_Over_Euro=1 THEN 'Yes' 
+When C.Value_Over_Euro=0 Then 'No' 
+END)AS [ValueOverEuro],*/
+--udf_GetCredentialPoundValueScalar
+dbo.udf_GetCredentialEuroValueScalar(C.CredentialId) as [ValueOverEuro],
+dbo.udf_GetCredentialEuroValueVector(C.CredentialId) as [ValueOverEuroID],
+
+
+--ValueRangeEuro AS ValueRangeEuro1, 
+VR.Value_Range AS ValueRangeEuro,
+VR.ValueRangeId AS ValueRangeEuro1, 
+
+Published_Reference AS PublishedReference, 
+
+--MAStudy AS MAStudy1,
+(CASE When C.MAStudy=1 THEN 'Yes' 
+When C.MAStudy=0 Then 'No' 
+END)AS [MAStudy],
+MAStudy AS MAStudy1,
+
+--PEClients AS PEClients1, 
+(CASE When C.PEClients=1 THEN 'Yes' 
+When C.PEClients=0 Then 'No' 
+END)AS [PEClients],
+PEClients AS PEClients1, 
+
+--QuarterDealAnnouncedId AS QuarterDealAnnounceID1, 
+QDC1.Quarter_Deal_Completed AS QuarterDealAnnounceID,
+QDC1.QuarterDealCompletedId AS QuarterDealAnnounceID1, 
+
+--QuarterDealCompletedId AS QuarterDealCompletedID1, 
+QDC2.Quarter_Deal_Completed AS QuarterDealCompletedId,
+QDC2.QuarterDealCompletedId AS QuarterDealCompletedID1, 
+
+--YearDealCompletedId AS YearDealCompletedID1, 
+YDC.Year_Deal_Completed AS YearDealCompletedID, 
+YDC.YearDealCompletedId AS YearDealCompletedID1,
+
+YDA.Year_Deal_Completed AS YearDealAnnouncedValue, 
+YDA.YearDealCompletedId AS YearDealAnnouncedId,
+
+dbo.udf_GetCredentialSubWorkTypeScalar(C.CredentialId) as [CorporateSubWorkType],
+dbo.udf_GetCredentialSubWorkTypeVector(C.CredentialId) as [CorporateSubWorkTypeID],
+
+CONVERT(varchar(12), DealAnnouncedId,103) as DealAnnouncedID
+--DealAnnouncedId AS DealAnnouncedID
+
+FROM         
+
+tblCredential as c
+
+LEFT JOIN tblValueRange AS VR ON VR.ValueRangeId = C.ValueRangeEuro
+
+LEFT JOIN tblQuarterDealCompleted AS QDC1 ON QDC1.QuarterDealCompletedId=C.QuarterDealAnnouncedId
+LEFT JOIN tblQuarterDealCompleted AS QDC2 ON QDC2.QuarterDealCompletedId=C.QuarterDealCompletedId
+LEFT JOIN tblYearDealCompleted AS YDC ON YDC.YearDealCompletedId=C.YearDealCompletedId
+LEFT JOIN tblYearDealCompleted AS YDA ON YDA.YearDealCompletedId=C.YearDeal_Announced
+
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCREDENTIALID)
+
+--WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCREDENTIALID)
+

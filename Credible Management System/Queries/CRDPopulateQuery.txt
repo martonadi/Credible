@@ -1,0 +1,28 @@
+﻿SELECT     
+
+CredentialId AS CredentialID,
+
+
+
+dbo.udf_GetCredentialWorkTypeCRDScalar(C.CredentialId) as [CRDWorkTypeValue],
+dbo.udf_GetCredentialWorkTypeCRDVector(C.CredentialId) as [CRDWorkTypeId],
+dbo.udf_GetCredentialSubWorkTypeCommercialScalar(C.CredentialId) as [CRDSubWorkTypeValue],
+dbo.udf_GetCredentialSubWorkTypeCommercialVector(C.CredentialId) as [CRDSubWorkTypeId],
+
+
+
+--ClientTypeIdCommercial AS ClientTypeIDCommerical1, 
+CTC.Client_Type AS ClientTypeValueCommercial,
+CTC.ClientTypeId AS ClientTypeIDCommerical1
+
+
+FROM         
+
+tblCredential as c
+
+
+
+LEFT JOIN tblClientType AS CTC  ON CTC.ClientTypeId = C.ClientTypeIdCommercial
+
+
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCREDENTIALID)

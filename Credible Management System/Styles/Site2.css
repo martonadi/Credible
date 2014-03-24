@@ -1,0 +1,640 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body
+{
+    background: RGB(0,117,154);
+    font-size: 8px;
+    font-family: Arial, "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Helvetica, Verdana, sans-serif;
+    margin: 8px;
+    padding: 0px;
+    color: #696969;
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   #4b6c9e;
+----------------------------------------------------------*/
+
+.page
+{
+    width: 99%;
+    background-color: #fff;
+    margin: 1px auto 1px auto;
+    border: 1px solid gray;
+    font-family: Arial;
+    font-size: 11px;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: RGB(0,117,154);
+    width: 100%;
+    font-family: Arial;
+    font-size: 11px;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    padding: 0px 8px;
+    margin: 8px 2px 3px 2px;
+    min-height: 450px;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 1px 0px 0px 1px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 15px;
+    background-color: RGB(0,117,154);
+    vertical-align: middle;
+}
+
+
+/* TAB MENU   4b6c9e
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color: #3a4f63;
+    width: 100%;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+/*fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}*/
+
+input.textEntry
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    padding-left: 10px;
+    display: block;
+    float: left;
+    text-align: left; /*width: auto;*/
+    font-family: Arial;
+    font-size: 23px;
+    font-weight: bold;
+    color: White;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+/* ACCORDIAN PANELS
+----------------------------------------------------------*/
+.accordionHeader
+{
+    border: 1px solid #2F4F4F;
+    color: white;
+    background-color: #2E4d7B;
+    font-family: Arial;
+    font-size: 9px;
+    padding: 4px;
+    margin-top: 1px;
+    cursor: pointer;
+}
+.accordionHeader a:hover
+{
+    background: none;
+    text-decoration: underline;
+}
+
+.accordionHeaderSelected
+{
+    border: 1px solid #2F4F4F;
+    color: white;
+    background-color: #5078B3;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.accordionHeader a
+{
+    color: #FFFFFF;
+    background: none;
+    text-decoration: none;
+}
+
+/* ASP PANEL
+----------------------------------------------------------*/
+.panelStyle
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #5078B3;
+    font-size: 11px;
+}
+
+.panelStyle1
+{
+    font-family: Arial;
+    font-size: 11px;
+}
+
+.panelStyle2
+{
+    font-family: Arial;
+    font-size: 10px;
+}
+
+/* ASP DROPDOWN
+----------------------------------------------------------*/
+.drpdown
+{
+    font-size: 11px;
+    font-family: Arial;
+    height: 20px;
+}
+
+/* ASP RADIOBUTTON
+----------------------------------------------------------*/
+.rdolist
+{
+    font-size: 11px;
+    font-family: Arial;
+    text-align: center;
+}
+
+/* MODAL POP UP
+----------------------------------------------------------*/
+.modal
+{
+    background-color: #D3DEEF;
+    border: 1px dashed #2F4F4F;
+    border-top: none;
+    padding: 5px;
+    padding-top: 10px;
+    font-size: small;
+}
+.modalBackground
+{
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+/* HTML LABEL CONTROL
+----------------------------------------------------------*/
+.labelStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+}
+.labelStyledetails
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #00759A;
+}
+.labelStyleHeading
+{
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.labelStylehidden
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    display: none;
+}
+/* ASP TEXTBOX
+----------------------------------------------------------*/
+.txtSingleStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+    border-style: solid;
+    border-width: 1px;
+    height: 18px;
+    border-color: Gray;
+}
+.txtSingleStylehidden
+{
+    font-size: 11px;
+    font-family: Arial;
+    border-style: solid;
+    border-width: 1px;
+    height: 18px;
+    border-color: Gray;
+    display: none;
+}
+
+/* ASP BUTTON
+----------------------------------------------------------*/
+.btnSingleStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+    border-style: solid;
+    border-width: 1px;
+    height: 20px;
+    border-color: Gray;
+}
+.btncolor
+{
+    border-style: none;
+    background-color: #00759A;
+    font-weight: bolder;
+    color: White;
+    font-family: Arial;
+    font-size: x-small;
+    cursor: hand;
+    height: 25px;
+    width: 50px;
+}
+
+/* ASP IMAGE
+----------------------------------------------------------*/
+.imgSingleStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
+}
+
+.imgSingleStylehidden
+{
+    font-size: 11px;
+    font-family: Arial;
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
+    display: none;
+}
+/* WATER MARK FOR TEXTBOX #
+----------------------------------------------------------*/
+.unwatermarked
+{
+    height: 18px;
+    width: 148px;
+}
+
+.watermarkedmandatory
+{
+    height: 18px;
+    padding: 2px 0 0 2px;
+    border: 1px solid #BEBEBE;
+    background-color: #FDCBCB;
+    color: gray;
+    font-size: 11px;
+    font-family: Arial;
+}
+
+.watermarked
+{
+    height: 18px;
+    padding: 2px 0 0 2px;
+    border: 1px solid #BEBEBE;
+    background-color: #F0F8FF;
+    color: gray;
+    font-size: 11px;
+    font-family: Arial;
+}
+
+/* AJAX COMBO BOX STYLE FFFFFF;
+----------------------------------------------------------*/
+
+#master_content .ajax__combobox_itemlist
+{
+    margin: 0px;
+}
+
+.AjaxToolkitStyle .ajax__combobox_inputcontainer .ajax__combobox_textboxcontainer input
+{
+    background-image: url(ComboBox/images/toolkit-bg.gif);
+    background-position: top left;
+    border: 0px none;
+    color: #FFFFFF;
+    padding: 4px 0px 3px 5px;
+    font-size: 13px;
+    height: 16px;
+    width: 240px;
+}
+.AjaxToolkitStyle .ajax__combobox_inputcontainer .ajax__combobox_buttoncontainer button
+{
+    background-image: url(ComboBox/images/toolkit-arrow.gif);
+    background-position: top left;
+    border: 0px none;
+    height: 23px;
+    width: 23px;
+}
+.AjaxToolkitStyle .ajax__combobox_itemlist
+{
+    border-color: #0F2543;
+    background-color: #EFEFEF;
+}
+
+.AquaStyle .ajax__combobox_inputcontainer .ajax__combobox_textboxcontainer input
+{
+    margin: 0;
+    background-image: url(../images/aqua-bg.gif);
+    background-position: top left;
+    border: 0px none;
+    padding: 2px 0px 0px 8px;
+    font-size: 11px;
+    height: 17px;
+    width: 150px;
+}
+.AquaStyle .ajax__combobox_inputcontainer .ajax__combobox_buttoncontainer button
+{
+    background-image: url(../images/aqua-arrow.gif);
+    background-position: top left;
+    border: 0px none;
+    height: 19px;
+    width: 19px;
+}
+.AquaStyle .ajax__combobox_itemlist
+{
+    border-color: #000000;
+    background-color: #FDCBCB;
+    width: 31%;
+    font-size: 11px;
+}
+.AquaStyle .ajax__combobox_itemlist li
+{
+    width: 98%;
+    font-size: 11px;
+}
+.WindowsStyle .ajax__combobox_inputcontainer .ajax__combobox_textboxcontainer input
+{
+    /*margin: 0;*/
+    border: solid 1px #7F9DB9;
+    border-right: 0px none;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-size: 11px;
+    height: 18px;
+    background-color: #EDEDED;
+}
+.WindowsStyle .ajax__combobox_inputcontainer .ajax__combobox_buttoncontainer button
+{
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/windows-arrow.gif);
+    background-position: top left; /*border: 0px none;*/
+    border-bottom: 1px solid;
+    height: 21px;
+    width: 21px;
+}
+.WindowsStyle .ajax__combobox_itemlist
+{
+    border-color: #7F9DB9;
+    width: 98%;
+}
+.WindowsStyle .ajax__combobox_itemlist li
+{
+    width: 98%;
+    font-size: 11px;
+}
+
+/* HAND ICON
+----------------------------------------------------------*/
+.handShow
+{
+    cursor: hand;
+}
+
+/* HIDE BUTTON
+----------------------------------------------------------*/
+.hideButton
+{
+    display: none;
+}
+/*........................................................*/
+.modallookup
+{
+    background-color: #8AC0D1;
+    border: 1px dashed #2F4F4F;
+    border-top: none;
+    padding: 5px;
+    padding-top: 10px;
+    font-size: small;
+}

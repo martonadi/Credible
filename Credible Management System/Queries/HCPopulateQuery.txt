@@ -1,0 +1,25 @@
+﻿SELECT     
+
+CredentialId AS CredentialID,
+
+--WTH.Work_Type AS WorkTypeValueHC,
+--WTH.WorkTypeId AS WorkTypeIdHC,
+dbo.udf_GetCredentialWorkTypeHCScalar(C.CredentialId) as [WorkTypeValueHC],
+dbo.udf_GetCredentialWorkTypeHCVector(C.CredentialId) as [WorkTypeIdHC],
+
+PS.PensionScheme AS PensionSchemeValueHC,
+PS.PENSIONSCHEMEID AS PensionSchemeIdHC,
+
+dbo.udf_GetCredentialSubWorkTypeHCScalar(C.CredentialId) as [HCSubWorkTypeValue]
+
+
+FROM tblCredential as c 
+
+--LEFT JOIN tblWorkType AS WTH ON WTH.WorkTypeId=C.WorkTypeIdHC
+
+LEFT JOIN tblPensionScheme AS PS ON PS.PENSIONSCHEMEID = C.PensionSchemeHC
+
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCREDENTIALID)
+
+
+--strCREDENTIALID

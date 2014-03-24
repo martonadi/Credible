@@ -1,0 +1,9 @@
+﻿SELECT     
+CredentialId AS CredentialID,
+dbo.udf_GetCredentialTransactionTypeScalar(C.CredentialId) as [EPCEnergyWorkTypeValue],
+dbo.udf_GetCredentialTransactionTypeVector(C.CredentialId) as [EPCEnergyWorkTypeId],
+ECT.Contract_Type AS ContractTypeValueEPCE,
+ECT.ContractTypeId AS ContractTypeIDEPCE
+FROM  tblCredential as c
+LEFT JOIN tblContractType AS ECT ON ECT.ContractTypeId=C.ContractTypeId
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCREDENTIALID)

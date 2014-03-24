@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77D53ADB-5BDA-4C5D-8F3C-7351E38130FA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMS</RootNamespace>
+    <AssemblyName>CMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLS\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Telerik.Web.Design, Version=2012.2.724.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLS\Telerik.Web.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2012.2.724.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLS\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2012.2.724.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLS\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\AdminDropdown.aspx" />
+    <Content Include="ADMIN\AdminEntryDetails.aspx" />
+    <Content Include="ADMIN\UserCreation.aspx" />
+    <Content Include="aLandscape.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="CredentialWebService.asmx" />
+    <Content Include="DLLS\AjaxControlToolkit.dll" />
+    <Content Include="DLLS\Telerik.Web.Design.dll" />
+    <Content Include="DLLS\Telerik.Web.UI.dll" />
+    <Content Include="DLLS\Telerik.Web.UI.Skins.dll" />
+    <Content Include="DLLS\Telerik.Web.UI.XML" />
+    <Content Include="EntryDetails.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Gateway.aspx" />
+    <Content Include="Images\11.gif" />
+    <Content Include="Images\AccessDenied.jpg" />
+    <Content Include="Images\bino.jpg" />
+    <Content Include="Images\Calendar_scheduleHS.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\cms1.bmp" />
+    <Content Include="Images\CMS_LawTax_Negative.png" />
+    <Content Include="Images\collapse.jpg" />
+    <Content Include="Images\Copy of collapse.jpg" />
+    <Content Include="Images\expand.jpg" />
+    <Content Include="Images\lloading.gif" />
+    <Content Include="Images\msg_error.gif" />
+    <Content Include="Images\TimeOut.jpg" />
+    <Content Include="Import.aspx" />
+    <Content Include="Importcred.aspx" />
+    <Content Include="Importcredi.aspx" />
+    <Content Include="ImportData.aspx" />
+    <Content Include="jquery.min.js" />
+    <Content Include="jqueryslidemenu.css" />
+    <Content Include="jqueryslidemenu.js" />
+    <Content Include="jsUpdateProgress.js" />
+    <Content Include="LOOKUPS\CountryLookUpGrid.aspx" />
+    <Content Include="LOOKUPS\LookUpGrid.aspx" />
+    <Content Include="PRATICEGROUPS\BAIF.aspx" />
+    <Content Include="PRATICEGROUPS\Corporate.aspx" />
+    <Content Include="PRATICEGROUPS\CorpTax.aspx" />
+    <Content Include="PRATICEGROUPS\CRD.aspx" />
+    <Content Include="PRATICEGROUPS\EPC.aspx" />
+    <Content Include="PRATICEGROUPS\EPCE.aspx" />
+    <Content Include="PRATICEGROUPS\HC.aspx" />
+    <Content Include="PRATICEGROUPS\IPF.aspx" />
+    <Content Include="PRATICEGROUPS\RealEstate.aspx" />
+    <Content Include="Queries\BAIFPopulateQuery.txt" />
+    <Content Include="Queries\CorporatePopulateQuery.txt" />
+    <Content Include="Queries\CorpTaxPopulateQuery.txt" />
+    <Content Include="Queries\CRDPopulateQuery.txt" />
+    <Content Include="Queries\EPCENERGYPopulateQuery.txt" />
+    <Content Include="Queries\EPCPopulateQueryText.txt" />
+    <Content Include="Queries\HCPopulateQuery.txt" />
+    <Content Include="Queries\IPFPopulateQuery.txt" />
+    <Content Include="Queries\REPopulateQuery.txt" />
+    <Content Include="Queries\SearchResultQuery.txt" />
+    <Content Include="Queries\SearchResultQuery1.txt" />
+    <Content Include="Queries\SearchResultQueryChkbx.txt" />
+    <Content Include="Queries\SearchResultQuery_View.txt" />
+    <Content Include="Redirect.aspx" />
+    <Content Include="Scripts\Credentials.js" />
+    <Content Include="SEARCH\ResultScreen.aspx" />
+    <Content Include="SEARCH\SearchScreen.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\ComboBox.css" />
+    <Content Include="Styles\FormDecorator\ButtonSprites.gif" />
+    <Content Include="Styles\FormDecorator\CheckBoxSprites.gif" />
+    <Content Include="Styles\FormDecorator\ComboSprites.gif" />
+    <Content Include="Styles\FormDecorator\FieldsetBgr.gif" />
+    <Content Include="Styles\FormDecorator\Office2010Silver.gif" />
+    <Content Include="Styles\FormDecorator\RadioButtonSprites.gif" />
+    <Content Include="Styles\FormDecorator\RadioButtonSprites.png" />
+    <Content Include="Styles\Grid.Office2010Silver.css" />
+    <Content Include="Styles\Grid\AddRecord.gif" />
+    <Content Include="Styles\Grid\ButtonSprites.gif" />
+    <Content Include="Styles\Grid\Cancel.gif" />
+    <Content Include="Styles\Grid\contextMenu.gif" />
+    <Content Include="Styles\Grid\Delete.gif" />
+    <Content Include="Styles\Grid\Delete.png" />
+    <Content Include="Styles\Grid\Edit.gif" />
+    <Content Include="Styles\Grid\Filter.gif" />
+    <Content Include="Styles\Grid\MoveDown.gif" />
+    <Content Include="Styles\Grid\MoveUp.gif" />
+    <Content Include="Styles\Grid\Office2010Silver.gif" />
+    <Content Include="Styles\Grid\PagingFirst.gif" />
+    <Content Include="Styles\Grid\PagingLast.gif" />
+    <Content Include="Styles\Grid\PagingNext.gif" />
+    <Content Include="Styles\Grid\PagingPrev.gif" />
+    <Content Include="Styles\Grid\Refresh.gif" />
+    <Content Include="Styles\Grid\Refresh.png" />
+    <Content Include="Styles\Grid\rgDrag.gif" />
+    <Content Include="Styles\Grid\SingleMinus.gif" />
+    <Content Include="Styles\Grid\SinglePlus.gif" />
+    <Content Include="Styles\Grid\SortAsc.gif" />
+    <Content Include="Styles\Grid\SortDesc.gif" />
+    <Content Include="Styles\Grid\sprite.gif" />
+    <Content Include="Styles\Grid\sprite.png" />
+    <Content Include="Styles\Grid\Update.gif" />
+    <Content Include="Styles\ListBox.Office2010Silver.css" />
+    <Content Include="Styles\ListBox\Office2010Silver.gif" />
+    <Content Include="Styles\ListBox\rlbButtonDisabled.png" />
+    <Content Include="Styles\ListBox\rlbButtonDisabledIE6.png" />
+    <Content Include="Styles\ListBox\rlbButtonHover.png" />
+    <Content Include="Styles\ListBox\rlbButtonHoverIE6.png" />
+    <Content Include="Styles\ListBox\rlbButtonNormal.png" />
+    <Content Include="Styles\ListBox\rlbButtonNormalIE6.png" />
+    <Content Include="Styles\ListBox\rlbDropClue.png" />
+    <Content Include="Styles\ListBox\rlbHeaderFooter.png" />
+    <Content Include="Styles\ListBox\rlbSprite.png" />
+    <Content Include="Styles\Menu.Office2010Silver.css" />
+    <Content Include="Styles\Menu\Office2010Silver.gif" />
+    <Content Include="Styles\Menu\rmRootExpand.png" />
+    <Content Include="Styles\Menu\rmRoundedLeft.png" />
+    <Content Include="Styles\Menu\rmRoundedLeft_rtl.png" />
+    <Content Include="Styles\Menu\rmRoundedRight.png" />
+    <Content Include="Styles\Menu\rmRoundedRight_rtl.png" />
+    <Content Include="Styles\Menu\rmSprite.png" />
+    <Content Include="Styles\Menu\rmVSprite.png" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Styles\Site2.css" />
+    <Content Include="TimeOut.aspx" />
+    <Content Include="ViewEntryDetails.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADMIN\AdminDropdown.aspx.cs">
+      <DependentUpon>AdminDropdown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AdminDropdown.aspx.designer.cs">
+      <DependentUpon>AdminDropdown.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\AdminEntryDetails.aspx.cs">
+      <DependentUpon>AdminEntryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AdminEntryDetails.aspx.designer.cs">
+      <DependentUpon>AdminEntryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UserCreation.aspx.cs">
+      <DependentUpon>UserCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UserCreation.aspx.designer.cs">
+      <DependentUpon>UserCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aLandscape.aspx.cs">
+      <DependentUpon>aLandscape.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aLandscape.aspx.designer.cs">
+      <DependentUpon>aLandscape.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CallingSP.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Logger.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialWebService.asmx.cs">
+      <DependentUpon>CredentialWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EntryDetails.aspx.cs">
+      <DependentUpon>EntryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EntryDetails.aspx.designer.cs">
+      <DependentUpon>EntryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gateway.aspx.cs">
+      <DependentUpon>Gateway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gateway.aspx.designer.cs">
+      <DependentUpon>Gateway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Importcred.aspx.cs">
+      <DependentUpon>Importcred.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Importcred.aspx.designer.cs">
+      <DependentUpon>Importcred.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Importcredi.aspx.cs">
+      <DependentUpon>Importcredi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Importcredi.aspx.designer.cs">
+      <DependentUpon>Importcredi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportData.aspx.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportData.aspx.designer.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOOKUPS\CountryLookUpGrid.aspx.cs">
+      <DependentUpon>CountryLookUpGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOOKUPS\CountryLookUpGrid.aspx.designer.cs">
+      <DependentUpon>CountryLookUpGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOOKUPS\LookUpGrid.aspx.cs">
+      <DependentUpon>LookUpGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOOKUPS\LookUpGrid.aspx.designer.cs">
+      <DependentUpon>LookUpGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\BAIF.aspx.cs">
+      <DependentUpon>BAIF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\BAIF.aspx.designer.cs">
+      <DependentUpon>BAIF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\Corporate.aspx.cs">
+      <DependentUpon>Corporate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\Corporate.aspx.designer.cs">
+      <DependentUpon>Corporate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\CorpTax.aspx.cs">
+      <DependentUpon>CorpTax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\CorpTax.aspx.designer.cs">
+      <DependentUpon>CorpTax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\CRD.aspx.cs">
+      <DependentUpon>CRD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\CRD.aspx.designer.cs">
+      <DependentUpon>CRD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\EPC.aspx.cs">
+      <DependentUpon>EPC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\EPC.aspx.designer.cs">
+      <DependentUpon>EPC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\EPCE.aspx.cs">
+      <DependentUpon>EPCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\EPCE.aspx.designer.cs">
+      <DependentUpon>EPCE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\HC.aspx.cs">
+      <DependentUpon>HC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\HC.aspx.designer.cs">
+      <DependentUpon>HC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\IPF.aspx.cs">
+      <DependentUpon>IPF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\IPF.aspx.designer.cs">
+      <DependentUpon>IPF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\RealEstate.aspx.cs">
+      <DependentUpon>RealEstate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRATICEGROUPS\RealEstate.aspx.designer.cs">
+      <DependentUpon>RealEstate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Redirect.aspx.cs">
+      <DependentUpon>Redirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect.aspx.designer.cs">
+      <DependentUpon>Redirect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SEARCH\ResultScreen.aspx.cs">
+      <DependentUpon>ResultScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SEARCH\ResultScreen.aspx.designer.cs">
+      <DependentUpon>ResultScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SEARCH\SearchScreen.aspx.cs">
+      <DependentUpon>SearchScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SEARCH\SearchScreen.aspx.designer.cs">
+      <DependentUpon>SearchScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TimeOut.aspx.cs">
+      <DependentUpon>TimeOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimeOut.aspx.designer.cs">
+      <DependentUpon>TimeOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewEntryDetails.aspx.cs">
+      <DependentUpon>ViewEntryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewEntryDetails.aspx.designer.cs">
+      <DependentUpon>ViewEntryDetails.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExcelFiles\All_Import_Template.xls" />
+    <Content Include="ExcelFiles\All_Import_Template1.xls" />
+    <Content Include="ExcelFiles\All_Import_Template_1.xls" />
+    <Content Include="ExcelFiles\All_Import_Template_2.xls" />
+    <Content Include="ExcelFiles\All_Import_Template_4.xls" />
+    <Content Include="ExcelFiles\Bucharest_DisputeResolution.xlsx" />
+    <Content Include="ExcelFiles\Bucharest_DR_1.xlsx" />
+    <Content Include="ExcelFiles\Bucharest_Real estate.xlsx" />
+    <Content Include="ExcelFiles\Bucharest_RE_1.xlsx" />
+    <Content Include="ExcelFiles\budapest.xlsx" />
+    <Content Include="ExcelFiles\Copy of Copy of ReadyToMigrateWarsawLifesciences.xls" />
+    <Content Include="ExcelFiles\Copy of EPCConst_1.xlsx" />
+    <Content Include="ExcelFiles\Copy of ReadyToMigrateWarsawLifesciences.xls" />
+    <Content Include="ExcelFiles\DisputeResolution.xlsx" />
+    <Content Include="ExcelFiles\energytest.xlsx" />
+    <Content Include="ExcelFiles\EPCConst_1.xlsx" />
+    <Content Include="ExcelFiles\EPCENERGY.xlsx" />
+    <Content Include="ExcelFiles\HumanCapital.xlsx" />
+    <Content Include="ExcelFiles\IPF.xlsx" />
+    <Content Include="ExcelFiles\IRG.xlsx" />
+    <Content Include="ExcelFiles\IRG_1.xlsx" />
+    <Content Include="ExcelFiles\IRG_3.xlsx" />
+    <Content Include="ExcelFiles\kyiv.xlsx" />
+    <Content Include="ExcelFiles\Latest_Template_1.xlsx" />
+    <Content Include="ExcelFiles\Latest_Template_2.xlsx" />
+    <Content Include="ExcelFiles\Mydata.xls" />
+    <Content Include="ExcelFiles\ReadytoMigrateBankingandFinance %2875472068_1%29.XLS" />
+    <Content Include="ExcelFiles\RealEstateCreds.xlsx" />
+    <Content Include="ExcelFiles\SOFIA.xlsx" />
+    <Content Include="ExcelFiles\sofia2.xlsx" />
+    <Content Include="ExcelFiles\SOFIA_1.xlsx" />
+    <Content Include="ExcelFiles\Soundbites.xlsx" />
+    <Content Include="ExcelFiles\Tech Lit.xlsx" />
+    <Content Include="ExcelFiles\Warsaw_REandConst.xlsx" />
+    <None Include="Import\DataValues.xls" />
+    <None Include="Styles\FormDecorator\Thumbs.db" />
+    <None Include="Styles\ListBox\Thumbs.db" />
+    <None Include="Styles\Menu\Thumbs.db" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>1388</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
