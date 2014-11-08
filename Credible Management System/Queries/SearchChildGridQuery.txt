@@ -1,0 +1,49 @@
+﻿SELECT     
+
+CredentialId AS CredentialID,
+
+Client AS ClientName,
+
+ClientDescription AS ClientDescription, 
+Project_Description AS MatterDescription, 
+Significant_Features AS OtherMatterDescription, 
+
+(CASE When C.Client_Name_Confidential=1 THEN 'Yes' 
+When C.Client_Name_Confidential=0 Then 'No' 
+END)AS [ClientNameConfidential], 
+
+--NameConfidential_Completion AS ClientNameConfidentialCompletion1, 
+(CASE When C.NameConfidential_Completion=1 THEN 'Yes' 
+When C.NameConfidential_Completion=0 Then 'No' 
+END)AS [ClientNameConfidentialCompletion], 
+
+--Client_Matter_Confidential AS ClientMatterConfidential1, 
+(CASE When C.Client_Matter_Confidential=1 THEN 'Yes' 
+When C.Client_Matter_Confidential=0 Then 'No' 
+END)AS [ClientMatterConfidential],
+
+--MatterConfidential_Completion AS MatterConfidentialCompletion1, 
+(CASE When C.MatterConfidential_Completion=1 THEN 'Yes' 
+When C.MatterConfidential_Completion=0 Then 'No' 
+END)AS [MatterConfidentialCompletion],
+
+--Value_Confidential AS ValueConfidential1, 
+(CASE When C.Value_Confidential=1 THEN 'Yes' 
+When C.Value_Confidential=0 Then 'No' 
+END)AS [ValueConfidential],
+
+--ValueConfidential_Completion AS ValueConfidentialCompletion1, 
+(CASE When C.ValueConfidential_Completion=1 THEN 'Yes' 
+When C.ValueConfidential_Completion=0 Then 'No' 
+END)AS [ValueConfidentialCompletion],
+
+--Credential_Version AS CredentialVersion1, 
+O.Credential_Version AS CredentialVersion, 
+
+Credential_Version_Other as CredentialVersionOther
+
+FROM tblCredential as c
+
+LEFT JOIN tblCredentialVersion AS O ON O.CredentialVersionId=C.Credential_Version
+
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCredentialID)

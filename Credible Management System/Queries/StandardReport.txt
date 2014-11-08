@@ -1,0 +1,88 @@
+﻿SELECT     
+
+CredentialId AS CredentialID,
+
+Client AS ClientName,
+Project_Description AS MatterDescription, 
+Significant_Features AS OtherMatterDescription, 
+ClientDescription AS ClientDescription, 
+
+O.Credential_Version AS CredentialVersion, 
+
+P.Credential_Type AS CredentialType, 
+
+ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeBAIFScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeCRDScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeEPCScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialTransactionTypeScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeRealEstateScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeHCScalar(C.CredentialId),'')+',','')
+As WT,
+
+NULLIF(dbo.udf_GetCredentialBusinessGroupScalar(C.CredentialId), '') as [PracticeGroup],
+NULLIF(dbo.udf_GetCredentialClientIndustrySectorScalar(C.CredentialId), '') as [ClientSector],
+NULLIF(dbo.udf_GetCredentialTransactionIndustrySectorScalar(C.CredentialId), '') as [MatterSector],
+NULLIF(dbo.udf_GetCredentialCountryMatterCloseScalar(C.CredentialId), '') as [MatterLocation],
+
+--Client_Name_Confidential AS ClientNameConfidential1, 
+(CASE When C.Client_Name_Confidential=1 THEN 'Yes' 
+When C.Client_Name_Confidential=0 Then 'No' 
+END)AS [ClientNameConfidential], 
+
+--NameConfidential_Completion AS ClientNameConfidentialCompletion1, 
+(CASE When C.NameConfidential_Completion=1 THEN 'Yes' 
+When C.NameConfidential_Completion=0 Then 'No' 
+END)AS [ClientNameConfidentialCompletion],
+
+--Client_Matter_Confidential AS ClientMatterConfidential1, 
+(CASE When C.Client_Matter_Confidential=1 THEN 'Yes' 
+When C.Client_Matter_Confidential=0 Then 'No' 
+END)AS [ClientMatterConfidential],
+
+--MatterConfidential_Completion AS MatterConfidentialCompletion1, 
+(CASE When C.MatterConfidential_Completion=1 THEN 'Yes' 
+When C.MatterConfidential_Completion=0 Then 'No' 
+END)AS [MatterConfidentialCompletion],
+
+--Value_Confidential AS ValueConfidential1, 
+(CASE When C.Value_Confidential=1 THEN 'Yes' 
+When C.Value_Confidential=0 Then 'No' 
+END)AS [ValueConfidential],
+
+--ValueConfidential_Completion AS ValueConfidentialCompletion1, 
+(CASE When C.ValueConfidential_Completion=1 THEN 'Yes' 
+When C.ValueConfidential_Completion=0 Then 'No' 
+END)AS [ValueConfidentialCompletion],
+
+--Date_Completed AS ActualDate, 
+CONVERT(varchar(12), Date_Completed,103) as DateCompleted,
+
+ActualDate_Ongoing AS ActualDateOngoing, 
+ProjectName_Core AS ProjectName, 
+
+NULLIF(dbo.udf_GetCredentialOtherMatterExecutiveScalar(C.CredentialId), '') as [OtherMatterExecutive],
+NULLIF(dbo.udf_GetCredentialLeadPartnerScalar(C.CredentialId), '') as [LeadPartner],
+NULLIF(dbo.udf_GetCredentialWorkTypeBAIFScalar(C.CredentialId), '') as [BAIFWorkType],
+NULLIF(dbo.udf_GetCredentialWorkTypeCORPORATEScalar(C.CredentialId), '') as [CorporateWorkType],
+NULLIF(dbo.udf_GetCredentialWorkTypeCRDScalar(C.CredentialId), '') as [CRDWorkType],
+NULLIF(dbo.udf_GetCredentialWorkTypeEPCScalar(C.CredentialId), '') as [EPCNatureofWork],
+NULLIF(dbo.udf_GetCredentialTransactionTypeScalar(C.CredentialId), '') as [EPCEnergyWorkType],
+NULLIF(dbo.udf_GetCredentialWorkTypeRealEstateScalar(C.CredentialId), '') as [RealEstateWorkType],
+NULLIF(dbo.udf_GetCredentialWorkTypeHCScalar(C.CredentialId), '') as [HCWorkType],
+
+NULLIF(dbo.udf_GetCredentialSubWorkTypeScalar(C.CredentialId), '') as [CorporateSubWorkType],
+NULLIF(dbo.udf_GetCredentialSubWorkTypeCommercialScalar(C.CredentialId), '') as [CRDSubWorkType],
+NULLIF(dbo.udf_GetCredentialSubWorkTypeREScalar(C.CredentialId), '') as [RealEstateSubWorkType],
+NULLIF(dbo.udf_GetCredentialSubWorkTypeHCScalar(C.CredentialId), '') as [HCSubWorkType],
+
+Credential_Version_Other as CredentialVersionOther
+
+FROM         
+
+tblCredential as c
+
+LEFT JOIN tblCredentialVersion AS O ON O.CredentialVersionId=C.Credential_Version
+LEFT JOIN tblCredentialType AS P ON P.CredentialTypeId=C.Credential_Type
+
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCredentialID)

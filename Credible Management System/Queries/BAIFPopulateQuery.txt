@@ -1,0 +1,28 @@
+﻿SELECT     
+
+CredentialId AS CredentialID,
+
+
+
+dbo.udf_GetCredentialWorkTypeBAIFScalar(C.CredentialId) as [BAIFWorkTypeValue],
+dbo.udf_GetCredentialWorkTypeBAIFVector(C.CredentialId) as [BAIFWorkTypeId],
+
+
+
+
+--ClientTypeIdBAIF AS ClientTypeIDBAIF1, 
+CT.Client_Type AS ClientTypeBAIF,
+CT.ClientTypeId AS ClientTypeIDBAIF1 ,
+
+LeadBanks AS LeadBanks
+
+
+FROM         
+
+tblCredential as c
+
+
+LEFT JOIN tblClientType AS CT ON CT.ClientTypeId = C.ClientTypeIdBAIF  
+
+
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCREDENTIALID)

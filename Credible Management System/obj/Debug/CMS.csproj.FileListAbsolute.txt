@@ -1,0 +1,67 @@
+D:\CMS\CMS\bin\CMS.dll
+D:\CMS\CMS\bin\CMS.pdb
+D:\CMS\CMS\bin\AjaxControlToolkit.dll
+D:\CMS\CMS\bin\Telerik.Web.Design.dll
+D:\CMS\CMS\bin\Telerik.Web.UI.dll
+D:\CMS\CMS\bin\Telerik.Web.UI.Skins.dll
+D:\CMS\CMS\bin\Telerik.Web.UI.xml
+D:\CMS\CMS\obj\Debug\ResolveAssemblyReference.cache
+D:\CMS\CMS\obj\Debug\CMS.dll
+D:\CMS\CMS\obj\Debug\CMS.pdb
+D:\Public Property\Jessi\AUGUST 31\CMS\bin\CMS.dll
+D:\Public Property\Jessi\AUGUST 31\CMS\bin\CMS.pdb
+D:\Public Property\Jessi\AUGUST 31\CMS\bin\AjaxControlToolkit.dll
+D:\Public Property\Jessi\AUGUST 31\CMS\bin\Telerik.Web.UI.dll
+D:\Public Property\Jessi\AUGUST 31\CMS\bin\Telerik.Web.UI.Skins.dll
+D:\Public Property\Jessi\AUGUST 31\CMS\bin\Telerik.Web.UI.xml
+D:\Public Property\Jessi\AUGUST 31\CMS\obj\Debug\ResolveAssemblyReference.cache
+D:\Public Property\Jessi\AUGUST 31\CMS\obj\Debug\CMS.dll
+D:\Public Property\Jessi\AUGUST 31\CMS\obj\Debug\CMS.pdb
+E:\CMS IMPORT\CMS\obj\Debug\ResolveAssemblyReference.cache
+E:\CMS IMPORT\CMS\obj\Debug\CMS.dll
+E:\CMS IMPORT\CMS\obj\Debug\CMS.pdb
+E:\CMS IMPORT\CMS\bin\CMS.dll
+E:\CMS IMPORT\CMS\bin\CMS.pdb
+E:\CMS IMPORT\CMS\bin\AjaxControlToolkit.dll
+E:\CMS IMPORT\CMS\bin\Telerik.Web.Design.dll
+E:\CMS IMPORT\CMS\bin\Telerik.Web.UI.dll
+E:\CMS IMPORT\CMS\bin\Telerik.Web.UI.Skins.dll
+E:\CMS IMPORT\CMS\bin\Telerik.Web.UI.xml
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS\bin\CMS.dll
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS\bin\CMS.pdb
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS\bin\AjaxControlToolkit.dll
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS\bin\Telerik.Web.UI.dll
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS\bin\Telerik.Web.UI.Skins.dll
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS\bin\Telerik.Web.UI.xml
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS\obj\Debug\CMS.dll
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS\obj\Debug\CMS.pdb
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS - Copy\bin\CMS.dll
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS - Copy\bin\CMS.pdb
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS - Copy\bin\AjaxControlToolkit.dll
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS - Copy\bin\Telerik.Web.UI.dll
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS - Copy\bin\Telerik.Web.UI.Skins.dll
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS - Copy\bin\Telerik.Web.UI.xml
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS - Copy\obj\Debug\CMS.csprojResolveAssemblyReference.cache
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS - Copy\obj\Debug\CMS.dll
+E:\NEENA\PROJECTS\CREDIBLE IMPORT\CMS IMPORT\CMS - Copy\obj\Debug\CMS.pdb
+c:\CMCK\Credible Management System\bin\CMS.dll.config
+c:\CMCK\Credible Management System\bin\CMS.dll
+c:\CMCK\Credible Management System\bin\CMS.pdb
+c:\CMCK\Credible Management System\bin\AjaxControlToolkit.dll
+c:\CMCK\Credible Management System\bin\Telerik.Web.Design.dll
+c:\CMCK\Credible Management System\bin\Telerik.Web.UI.dll
+c:\CMCK\Credible Management System\bin\Telerik.Web.UI.Skins.dll
+c:\CMCK\Credible Management System\bin\Telerik.Web.UI.xml
+c:\CMCK\Credible Management System\obj\Debug\CMS.dll
+c:\CMCK\Credible Management System\obj\Debug\CMS.pdb
+D:\Java\Credible\Credible Management System\bin\CMS.dll.config
+D:\Java\Credible\Credible Management System\bin\CMS.dll
+D:\Java\Credible\Credible Management System\bin\CMS.pdb
+D:\Java\Credible\Credible Management System\bin\AjaxControlToolkit.dll
+D:\Java\Credible\Credible Management System\bin\Telerik.Web.Design.dll
+D:\Java\Credible\Credible Management System\bin\Telerik.Web.UI.dll
+D:\Java\Credible\Credible Management System\bin\Telerik.Web.UI.Skins.dll
+D:\Java\Credible\Credible Management System\bin\Telerik.Web.UI.xml
+D:\Java\Credible\Credible Management System\obj\Debug\CMS.dll
+D:\Java\Credible\Credible Management System\obj\Debug\CMS.pdb
+D:\Java\Credible\Credible Management System\obj\Debug\CMS.csprojResolveAssemblyReference.cache

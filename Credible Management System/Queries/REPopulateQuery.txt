@@ -1,0 +1,9 @@
+﻿SELECT     
+CredentialId AS CredentialID,
+dbo.udf_GetCredentialClientTypeRealEstateScalar(C.CredentialId) as [RealEstateClientTypeValue],
+dbo.udf_GetCredentialClientTypeRealEstateVector(C.CredentialId) as [RealEstateClientTypeID],
+dbo.udf_GetCredentialWorkTypeRealEstateScalar(C.CredentialId) as [RealEstateWorkTypeValue],
+dbo.udf_GetCredentialWorkTypeRealEstateVector(C.CredentialId) as [RealEstateWorkTypeID],
+dbo.udf_GetCredentialSubWorkTypeREVector(C.CredentialId) as [RealEstateSubWorkType]
+FROM   tblCredential as c
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCREDENTIALID)

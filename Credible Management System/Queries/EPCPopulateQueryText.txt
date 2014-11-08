@@ -1,0 +1,44 @@
+﻿SELECT     
+
+CredentialId AS CredentialID,
+
+
+
+--dbo.udf_GetCredentialNatureWorkScalar(C.CredentialId) as [EPCNatureofWorkValue],
+dbo.udf_GetCredentialWorkTypeEPCScalar(C.CredentialId) as [EPCNatureofWorkValue],
+--dbo.udf_GetCredentialNatureWorkVector(C.CredentialId) as [EPCNatureofWorkId],
+dbo.udf_GetCredentialWorkTypeEPCVector(C.CredentialId) as [EPCNatureofWorkId],
+dbo.udf_GetCredentialTypeOfContractScalar(C.CredentialId) as [EPCTypeofContractValue],
+dbo.udf_GetCredentialTypeOfContractVector(C.CredentialId) as [EPCTypeofContractId],
+
+--ClientTypeIdEPC AS ClientTypeIDEPC1, 
+CTE.Client_Type AS ClientTypeValueEPC1, 
+CTE.ClientTypeId AS ClientTypeIDEPC1, 
+
+Client_Type_Other AS ClientTypeOtherEPC, 
+Type_Of_Contract_Other AS TypeofContractOtherEPC, 
+
+--SubjectMatterId AS SubjectMatterIDEPC1, 
+SM.Subject_Matter AS SubjectMatterValueEPC,
+SM.SubjectMatterId AS SubjectMatterIDEPC1,
+
+Subject_Matter_Other AS SubjectMatterOtherEPC, 
+
+CSE.Client_Scope AS ClientScopeValueEPC1,
+CSE.ClientScopeId AS ClientScopeIDEPC1
+
+
+FROM         
+
+tblCredential as c
+
+
+LEFT JOIN tblClientType AS CTE  ON CTE.ClientTypeId = C.ClientTypeIdEPC
+
+LEFT JOIN tblSubjectMatter AS SM  ON SM.SubjectMatterId = C.SubjectMatterId
+
+LEFT JOIN tblClientScope AS CSE  ON CSE.ClientScopeId = C.ClientScopeId
+
+
+
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCREDENTIALID)

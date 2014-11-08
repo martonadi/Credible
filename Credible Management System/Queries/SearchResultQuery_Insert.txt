@@ -1,0 +1,357 @@
+﻿SELECT     
+
+CredentialId AS CredentialID,
+
+Client AS ClientName,
+
+
+(CASE When (C.Client_Name_Confidential=1 and c.Client_Matter_Confidential=1 and c.Value_Confidential=1)
+THEN '[confidential – name/matter/value] [' + Client + '] ' + 
+
+(CASE When (Project_description like(',%')) THEN ClientDescription + project_description
+else  ClientDescription+' ' + project_description end)
+
+When C.Client_Name_Confidential=1 and c.Client_Matter_Confidential=1 
+THEN '[confidential – name/matter] [' + Client + '] ' + 
+(CASE When (Project_description like(',%')) THEN ClientDescription + project_description else  ClientDescription+' ' + project_description end)
+
+When C.Client_Name_Confidential=1 and c.Value_Confidential=1 
+THEN '[confidential – name/value] [' + Client + '] ' + 
+(CASE When (Project_description like(',%')) THEN ClientDescription + project_description else  ClientDescription+' ' + project_description end) 
+
+When C.Client_Matter_Confidential=1 and c.Value_Confidential=1 
+THEN '[confidential – matter/value] ' + 
+(CASE When (Project_description like(',%')) THEN client + project_description else  client+' ' + project_description end)
+
+
+When C.Client_Name_Confidential=1 
+THEN '[confidential – client name] [' + Client + '] ' 
++ (CASE When (Project_description like(',%')) THEN ClientDescription + project_description else  ClientDescription+' ' + project_description end)
+
+When C.Client_Matter_Confidential=1 
+THEN '[confidential – matter] ' + 
+(CASE When (Project_description like(',%')) THEN client + project_description else  client+' ' + project_description end)
+
+When C.Value_Confidential=1 THEN '[confidential – value] ' 
++ (CASE When (Project_description like(',%')) THEN client + project_description else  client+' ' + project_description end)
+else (
+CASE When (Project_description like(',%')) THEN client + project_description else  client+' ' + project_description end)
+END)AS [NameFilter],
+
+
+ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeBAIFScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeCRDScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeEPCScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialTransactionTypeScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeRealEstateScalar(C.CredentialId), '')+',','')
++ISNULL(NULLIF(dbo.udf_GetCredentialWorkTypeHCScalar(C.CredentialId),'')+',','')
+As WT,
+
+NULLIF(dbo.udf_GetCredentialBusinessGroupScalar(C.CredentialId), '') as [PracticeGroup],
+NULLIF(dbo.udf_GetCredentialClientIndustrySectorScalar(C.CredentialId), '') as [ClientSector],
+NULLIF(dbo.udf_GetCredentialClientIndustryTypeScalar(C.CredentialId), '') as [ClientSubSector],
+NULLIF(dbo.udf_GetCredentialCountryClientScalar(C.CredentialId), '') as [PredominantCountryofClient],
+NULLIF(dbo.udf_GetCredentialTransactionIndustrySectorScalar(C.CredentialId), '') as [MatterSector],
+NULLIF(dbo.udf_GetCredentialTransactionIndustryTypeScalar(C.CredentialId), '') as [MatterSubSector],
+NULLIF(dbo.udf_GetCredentialCountryMatterOpenScalar(C.CredentialId), '') as [ContryWhereMatterOpened],
+NULLIF(dbo.udf_GetCredentialCountryMatterCloseScalar(C.CredentialId), '') as [MatterLocation],
+NULLIF(dbo.udf_GetCredentialCountryJurisdictionScalar(C.CredentialId), '') as [CountryJurisdiction],
+NULLIF(dbo.udf_GetCredentialCountryArbitrationScalar(C.CredentialId), '') as [CountryArbitration],
+NULLIF(dbo.udf_GetCredentialLanguageofDisputeScalar(C.CredentialId), '') as [LanguageofDispute],
+NULLIF(dbo.udf_GetCredentialTeamScalar(C.CredentialId), '') as [Team],
+NULLIF(dbo.udf_GetCredentialLeadPartnerScalar(C.CredentialId), '') as [LeadPartner],
+NULLIF(dbo.udf_GetCredentialSourceOfCredentialScalar(C.CredentialId), '') as [SourceOfCredential],
+NULLIF(dbo.udf_GetCredentialOtherMatterExecutiveScalar(C.CredentialId), '') as [OtherMatterExecutive],
+NULLIF(dbo.udf_GetCredentialReferredFromCMSOfficeScalar(C.CredentialId), '') as [CMSFirmsInvolved],
+NULLIF(dbo.udf_GetCredentialCountryOtherCMSOfficeScalar(C.CredentialId), '') as [CountriesofotherCMSFirms],
+NULLIF(dbo.udf_GetCredentialOtherUsesScalar(C.CredentialId), '') as [OtherUses],
+NULLIF(dbo.udf_GetCredentialKnowHowScalar(C.CredentialId), '') as [KnowHow],
+
+NULLIF(dbo.udf_GetCredentialWorkTypeBAIFScalar(C.CredentialId), '') as [BAIFWorkType],
+
+NULLIF(dbo.udf_GetCredentialWorkTypeCORPORATEScalar(C.CredentialId), '') as [CorporateWorkType],
+NULLIF(dbo.udf_GetCredentialSubWorkTypeScalar(C.CredentialId), '') as [CorporateSubWorkType],
+--dbo.udf_GetCredentialSubWorkTypeCORPORATEScalar(C.CredentialId) as [CorporateSubWorkType],
+NULLIF(dbo.udf_GetCredentialActingForScalar(C.CredentialId), '') as [CorporateActingFor],
+NULLIF(dbo.udf_GetCredentialCountryBuyerScalar(C.CredentialId), '') as [CorporateCountryBuyer],
+NULLIF(dbo.udf_GetCredentialCountrySellerScalar(C.CredentialId), '') as [CorporateCountrySeller],
+NULLIF(dbo.udf_GetCredentialCountryTargetScalar(C.CredentialId), '') as [CorporateCountryTarget],
+
+NULLIF(dbo.udf_GetCredentialWorkTypeCRDScalar(C.CredentialId), '') as [CRDWorkType],
+NULLIF(dbo.udf_GetCredentialSubWorkTypeCommercialScalar(C.CredentialId), '') as [CRDSubWorkType],
+
+--dbo.udf_GetCredentialNatureWorkScalar(C.CredentialId) as [EPCNatureofWork],
+NULLIF(dbo.udf_GetCredentialWorkTypeEPCScalar(C.CredentialId), '') as [EPCNatureofWork],
+NULLIF(dbo.udf_GetCredentialTypeOfContractScalar(C.CredentialId), '') as [EPCTypeofContract],
+
+NULLIF(dbo.udf_GetCredentialTransactionTypeScalar(C.CredentialId), '') as [EPCEnergyWorkType],
+
+NULLIF(dbo.udf_GetCredentialClientTypeRealEstateScalar(C.CredentialId), '') as [RealEstateClientType],
+NULLIF(dbo.udf_GetCredentialWorkTypeRealEstateScalar(C.CredentialId), '') as [RealEstateWorkType],
+NULLIF(dbo.udf_GetCredentialSubWorkTypeREScalar(C.CredentialId), '') as [RealEstateSubWorkType],
+
+NULLIF(dbo.udf_GetCredentialWorkTypeHCScalar(C.CredentialId), '') as [HCWorkType],
+NULLIF(dbo.udf_GetCredentialSubWorkTypeHCScalar(C.CredentialId), '') as [HCSubWorkType],
+
+
+--Client_Name_Confidential AS ClientNameConfidential1, 
+(CASE When C.Client_Name_Confidential=1 THEN 'Yes' 
+When C.Client_Name_Confidential=0 Then 'No' 
+END)AS [ClientNameConfidential], 
+
+--NameConfidential_Completion AS ClientNameConfidentialCompletion1, 
+(CASE When C.NameConfidential_Completion=1 THEN 'Yes' 
+When C.NameConfidential_Completion=0 Then 'No' 
+END)AS [ClientNameConfidentialCompletion], 
+
+
+ClientDescription AS ClientDescription, 
+
+Matter_No AS MatterNumber, 
+--Date_Opened AS DateMatterOpened, 
+CONVERT(varchar(12), Date_Opened,103) as DateMatterOpened,
+
+Project_Description AS MatterDescription, 
+Significant_Features AS OtherMatterDescription, 
+
+--Client_Matter_Confidential AS ClientMatterConfidential1, 
+(CASE When C.Client_Matter_Confidential=1 THEN 'Yes' 
+When C.Client_Matter_Confidential=0 Then 'No' 
+END)AS [ClientMatterConfidential],
+
+--MatterConfidential_Completion AS MatterConfidentialCompletion1, 
+(CASE When C.MatterConfidential_Completion=1 THEN 'Yes' 
+When C.MatterConfidential_Completion=0 Then 'No' 
+END)AS [MatterConfidentialCompletion],
+
+--Date_Completed AS ActualDate, 
+CONVERT(varchar(12), Date_Completed,103) as DateCompleted,
+
+ActualDate_Ongoing AS ActualDateOngoing, 
+ProjectName_Core AS ProjectName, 
+
+--Country_Law AS ApplicableLaw, 
+K.Country_Law AS ApplicableLaw, 
+
+Country_Law_Other AS ApplicableLawOther, 
+
+--Contentious_IRG AS Contentious1, 
+(CASE When C.Contentious_IRG=1 THEN 'Contentious' 
+When C.Contentious_IRG=0 Then 'Non-Contentious' 
+When C.Contentious_IRG=2 Then 'Both' 
+When C.Contentious_IRG=3 Then '-' 
+END)AS Contentious,
+
+
+Language_Of_Dispute_Other AS LanguageofDisputeOther, 
+
+--Dispute_Resolution AS DisputeResolution1, 
+DR.Dispute_Resolution AS DisputeResolution, 
+
+--ArbitrationCity AS SeatofArbitration1, 
+SOA.Country_Law AS SeatofArbitration,
+
+ArbitrationCity_Other AS SeatofArbitrationOther, 
+
+--InvestmentTreaty AS InvestmentTreaty1, 
+(CASE When C.InvestmentTreaty=1 THEN 'Yes' 
+When C.InvestmentTreaty=0 Then 'No' 
+END)AS [InvestmentTreaty],
+
+--Investigation_Type AS InvestigationType1, 
+IV.Investigation_Type AS InvestigationType,
+
+--Arbitral_Rules AS ArbitralRules1, 
+AR.Arbitral_Rules AS ArbitralRules,
+
+ValueOfDeal_Core AS ValueOfDeal, 
+
+--Currency_Of_Deal AS CurrencyOfDeal, 
+L.Currency_Of_Deal AS CurrencyOfDeal, 
+
+--Value_Confidential AS ValueConfidential1, 
+(CASE When C.Value_Confidential=1 THEN 'Yes' 
+When C.Value_Confidential=0 Then 'No' 
+END)AS [ValueConfidential],
+
+--ValueConfidential_Completion AS ValueConfidentialCompletion1, 
+(CASE When C.ValueConfidential_Completion=1 THEN 'Yes' 
+When C.ValueConfidential_Completion=0 Then 'No' 
+END)AS [ValueConfidentialCompletion],
+
+CMSPartnerName AS CMSPartnername, 
+SourceOfCredential_Other AS SourceofCredentialOther, 
+
+--Lead_CMS_Firm AS LeadCMSFirm1, 
+M.Referred_From_Other_CMS_Office AS LeadCMSFirm, 
+
+--Credential_Status AS CredentialStatus1, 
+N.Credential_Status AS CredentialStatus, 
+
+--Credential_Version AS CredentialVersion1, 
+O.Credential_Version AS CredentialVersion, 
+
+--Credential_Type AS CredentialType1, 
+P.Credential_Type AS CredentialType, 
+
+--Priority AS Priority1, 
+PRT.Priority AS Priority, 
+
+--ProBono AS ProBono1, 
+(CASE When C.ProBono=1 THEN 'Yes' 
+When C.ProBono=0 Then 'No' 
+END)AS [ProBono],
+
+Bible_Reference AS BibleReference, 
+
+--ClientTypeIdBAIF AS ClientTypeIDBAIF1, 
+CT.Client_Type AS ClientTypeBAIF,
+
+LeadBanks AS LeadBanks, 
+
+--Value_Over_US AS ValueOverUS1, 
+/*(CASE When C.Value_Over_US=1 THEN 'Yes' 
+When C.Value_Over_US=0 Then 'No' 
+END)AS [ValueOverUS],*/
+dbo.udf_GetCredentialDollarValueScalar(C.CredentialId) as [ValueOverUS],
+
+--Value_Over_Pound AS ValueOverPound1, 
+/*(CASE When C.Value_Over_Pound=1 THEN 'Yes'
+When C.Value_Over_Pound=0 Then 'No' 
+END)AS [ValueOverPound],*/
+dbo.udf_GetCredentialPoundValueScalar(C.CredentialId) as [ValueOverPound],
+
+--Value_Over_Euro AS ValueOverEuro1, 
+/*(CASE When C.Value_Over_Euro=1 THEN 'Yes' 
+When C.Value_Over_Euro=0 Then 'No' 
+END)AS [ValueOverEuro],*/
+--udf_GetCredentialPoundValueScalar
+dbo.udf_GetCredentialEuroValueScalar(C.CredentialId) as [ValueOverEuro],
+
+--ValueRangeEuro AS ValueRangeEuro1, 
+VR.Value_Range AS ValueRangeEuro,
+
+Published_Reference AS PublishedReference, 
+
+--MAStudy AS MAStudy1,
+(CASE When C.MAStudy=1 THEN 'Yes' 
+When C.MAStudy=0 Then 'No' 
+END)AS [MAStudy],
+
+--PEClients AS PEClients1, 
+(CASE When C.PEClients=1 THEN 'Yes' 
+When C.PEClients=0 Then 'No' 
+END)AS [PEClients],
+
+--QuarterDealAnnouncedId AS QuarterDealAnnounceID1, 
+QDC1.Quarter_Deal_Completed AS QuarterDealAnnounceID,
+
+--QuarterDealCompletedId AS QuarterDealCompletedID1, 
+QDC2.Quarter_Deal_Completed AS QuarterDealCompletedId,
+
+--YearDealCompletedId AS YearDealCompletedID1, 
+YDC.Year_Deal_Completed AS YearDealCompletedID, 
+
+YDA.Year_Deal_Completed AS YearDealAnnounced, 
+
+--DealAnnouncedId AS DealAnnouncedID,
+CONVERT(varchar(12), DealAnnouncedId,103) as DealAnnouncedID,
+
+CTWT.Work_Type AS WorkTypeCorpTax,
+
+--ClientTypeIdCommercial AS ClientTypeIDCommerical1, 
+CTC.Client_Type AS ClientTypeIdCommercial,
+
+--ClientTypeIdEPC AS ClientTypeIDEPC1, 
+CTE.Client_Type AS ClientTypeIDEPC, 
+
+CSP.Client_Scope as ClientScope,
+
+Client_Type_Other AS ClientTypeOtherEPC, 
+Type_Of_Contract_Other AS TypeofContractOtherEPC, 
+
+--SubjectMatterId AS SubjectMatterIDEPC1, 
+SM.Subject_Matter AS SubjectMatterIDEPC,
+
+Subject_Matter_Other AS SubjectMatterOtherEPC, 
+
+--ContractTypeId AS ContractTypeIDEPCE1, 
+ECT.Contract_Type AS ContractTypeIDEPCE,
+
+--WorkTypeIdHC AS WorkTypeIDHC1, 
+--WTH.Work_Type AS WorkTypeIdHC,
+
+--PensionSchemeHC AS PensionSchemeHC1, 
+PS.PensionScheme AS PensionSchemeHC,
+
+--ClientTypeIdIPF AS ClientTypeIDIPF1, 
+CTIPF.Client_Type AS ClientTypeIdIPF, 
+
+--DeleteFlag as DeleteFlag,
+Keyword as Keyword,
+
+Credential_Version_Other as CredentialVersionOther,
+
+Keyword as TempWorkType,
+
+CONVERT(varchar(12), Date_Created,103) as Date_Created,
+
+CONVERT(varchar(12), Date_Updated,103) as Date_Updated,
+
+Created_By as Created_By,
+
+Updated_By as Updated_By,
+
+DeleteFlag as DeleteFlag
+
+FROM         
+
+tblCredential as c
+
+LEFT JOIN tblDisputeResolution AS DR  ON DR.DisputeResolutionId=C.Dispute_Resolution
+LEFT JOIN tblInvestigationType AS IV  ON IV.InvestigationTypeId=C.Investigation_Type
+LEFT JOIN tblArbitralRules AS AR  ON AR.ArbitralRulesId=C.Arbitral_Rules
+LEFT JOIN tblCountryLaw AS SOA  ON SOA.CountryLawId=C.ArbitrationCity
+
+LEFT JOIN tblCountryLaw AS K  ON K.CountryLawId=C.Country_Law
+LEFT JOIN tblCurrencyOfDeal AS L ON L.CurrencyOfDealId=C.Currency_Of_Deal
+LEFT JOIN tblReferredFromOtherCMSOffice AS M ON M.ReferredFromOtherCMSOfficeId=C.Lead_CMS_Firm
+
+LEFT JOIN tblCredentialStatus AS N ON N.CredentialStatusId=C.Credential_Status
+LEFT JOIN tblCredentialVersion AS O ON O.CredentialVersionId=C.Credential_Version
+LEFT JOIN tblCredentialType AS P ON P.CredentialTypeId=C.Credential_Type
+
+LEFT JOIN tblPriority AS PRT ON PRT.PriorityId=C.Priority
+
+LEFT JOIN tblClientType AS CT ON CT.ClientTypeId = C.ClientTypeIdBAIF  
+LEFT JOIN tblTransactionCurrency AS TC ON TC.TransactionCurrencyId = C.Transaction_Value  
+
+LEFT JOIN tblValueRange AS VR ON VR.ValueRangeId = C.ValueRangeEuro
+
+LEFT JOIN tblQuarterDealCompleted AS QDC1 ON QDC1.QuarterDealCompletedId=C.QuarterDealAnnouncedId
+LEFT JOIN tblQuarterDealCompleted AS QDC2 ON QDC2.QuarterDealCompletedId=C.QuarterDealCompletedId
+
+LEFT JOIN tblYearDealCompleted AS YDC ON YDC.YearDealCompletedId=C.YearDealCompletedId
+LEFT JOIN tblYearDealCompleted AS YDA ON YDA.YearDealCompletedId=C.YearDeal_Announced
+
+LEFT JOIN tblWorkType AS CTWT ON CTWT.WorkTypeId=C.WorkType_CorpTax
+
+
+LEFT JOIN tblClientType AS CTC  ON CTC.ClientTypeId = C.ClientTypeIdCommercial
+LEFT JOIN tblClientType AS CTE  ON CTE.ClientTypeId = C.ClientTypeIdEPC
+LEFT JOIN tblClientScope AS CSP  ON CSP.ClientScopeId = C.ClientScopeId
+
+LEFT JOIN tblSubjectMatter AS SM  ON SM.SubjectMatterId = C.SubjectMatterId
+
+LEFT JOIN tblContractType AS ECT ON ECT.ContractTypeId=C.ContractTypeId
+
+--LEFT JOIN tblWorkType AS WTH ON WTH.WorkTypeId=C.WorkTypeIdHC
+
+LEFT JOIN tblPensionScheme AS PS ON PS.PENSIONSCHEMEID = C.PensionSchemeHC
+
+LEFT JOIN tblClientType AS CTIPF ON CTIPF.ClientTypeId=C.ClientTypeIdIPF
+
+--WHERE  C.DeleteFlag='0' and C.Credential_Version='1'
+
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCredentialID)

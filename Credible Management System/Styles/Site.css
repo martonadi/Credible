@@ -1,0 +1,1290 @@
+﻿
+
+/* DEFAULTS
+----------------------------------------------------------*/
+
+body
+{
+    background: RGB(0,117,154);
+    font-size: 8px;
+    font-family: Arial, "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Helvetica, Verdana, sans-serif;
+    margin: 8px;
+    padding: 0px;
+    color: #696969;
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   #4b6c9e;
+----------------------------------------------------------*/
+
+.page
+{
+    width: 99%;
+    background-color: #fff;
+    margin: 1px auto 1px auto;
+    border: 1px solid gray;
+    font-family: Arial;
+    font-size: 11px;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: RGB(0,117,154);
+    width: 100%;
+    font-family: Arial;
+    font-size: 11px;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    padding: 0px 8px;
+    margin: 8px 2px 3px 2px;
+    min-height: 500px;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 1px 0px 0px 1px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 15px;
+    background-color: RGB(0,117,154);
+    vertical-align: middle;
+}
+
+
+/* TAB MENU   4b6c9e
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color: #3a4f63;
+    width: 100%;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+/*fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}*/
+
+legend
+{
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    color: #00759A;
+}
+/*
+input.textEntry
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}*/
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    padding-left: 10px;
+    display: block;
+    float: left;
+    text-align: left; /*width: auto;*/
+    font-family: Arial;
+    font-size: 23px;
+    font-weight: bold;
+    color: White;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* ACCORDIAN PANELS#2E4d7B #4eacc5;
+----------------------------------------------------------*/
+.accordionHeader
+{
+    border: 1px solid #2F4F4F;
+    color: white;
+    background-color: RGB(0,117,154);
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px;
+    margin-top: 1px;
+    cursor: pointer;
+}
+.accordionHeader a:hover
+{
+    background: none;
+    text-decoration: underline;
+}
+
+.accordionHeaderSelected
+{
+    border: 1px solid #2F4F4F;
+    color: white;
+    background-color: #5078B3;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.accordionHeader a
+{
+    color: #FFFFFF;
+    background: none;
+    text-decoration: none;
+}
+
+/* ASP PANEL
+----------------------------------------------------------*/
+.panelStyle
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #5078B3;
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+}
+.panelStylestatic
+{
+    border-width: 0px;
+    border-style: solid;
+    border-color: Gray;
+    font-size: 11px;
+}
+
+.panelStyle1
+{
+    font-family: Arial;
+    font-size: 11px;
+}
+
+.panelStyle2
+{
+    font-family: Arial;
+    font-size: 10px;
+}
+
+.panelStylehidden
+{
+    font-family: Arial;
+    font-size: 11px;
+    display: none;
+}
+
+
+/* ASP DROPDOWN
+----------------------------------------------------------*/
+.drpdown
+{
+    font-size: 11px;
+    font-family: Arial;
+    height: 20px;
+}
+
+/* ASP RADIOBUTTON
+----------------------------------------------------------*/
+.rdolist
+{
+    font-size: 11px;
+    font-family: Arial;
+    text-align: left;
+    margin-left: -6px;
+}
+
+/* MODAL POP UP border-top: none;
+----------------------------------------------------------*/
+.modal
+{
+    background-color: #D3DEEF;
+    border: 1px solid #2F4F4F;
+    padding: 5px;
+    padding-top: 10px;
+    font-size: small;
+}
+.modallookup
+{
+    background-color: #8AC0D1;
+    border: 1px solid #2F4F4F;
+    padding: 5px;
+    padding-top: 10px;
+    font-size: small;
+}
+.modalentryscreen
+{
+    border: 1px solid #FFFFFF;
+    font-size: small;
+}
+.modalBackground
+{
+    background-color: White;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+/* HTML LABEL CONTROL
+----------------------------------------------------------*/
+.labelStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+}
+.labelStylePartial
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    display:inline-table;
+}
+.labelStyleSearch
+{
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #00759A;
+}
+.labelStyleName
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    color: White;
+}
+.labelStyle1
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    display: inline;
+}
+.labelStylePG
+{
+    font-size: 11px;
+    font-family: Arial;
+    color: RGB(0,117,154);
+}
+.labelStarStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    color: Red;
+}
+
+.labelStarStyleHidden
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    color: Red;
+    display: none;
+}
+
+.labelStyle10
+{
+    font-size: 10px;
+    font-family: Arial;
+}
+.labelStyle10b
+{
+    font-size: 10px;
+    font-family: Arial;
+}
+.labelStyle10telerik
+{
+    font-size: 10px;
+    font-family: Arial;
+    display: none;
+}
+
+.labelStylehidden
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    display: none;
+}
+.labelStyleHeading
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.menulabelStylehidden
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #4EACC5;
+    font-style: italic;
+    display: none;
+}
+.labelmandatory
+{
+    display: none;
+    color: Red;
+}
+.hyplabelStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+}
+
+.labelStyle10spa
+{
+    font-size: 10px;
+    font-family: Arial;
+}
+
+
+/* ASP TEXTBOX  #EDEDED
+----------------------------------------------------------*/
+.txtSingleStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+    border-style: solid;
+    border-width: 1px;
+    height: 20px;
+    border-color: Gray;
+    background-color: #F0F8FF;
+    color: Gray;
+}
+.PanelSingleStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+}
+.PanelSingleStylePG
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+}
+.txtSingleStyleEnabled
+{
+    font-size: 11px;
+    font-family: Arial;
+    border-style: solid;
+    font-weight: bolder;
+    border-width: 1px;
+    height: 18px;
+    border-color: Gray;
+    color: Black;
+}
+.txtSingleStylehidden
+{
+    font-size: 11px;
+    font-family: Arial;
+    border-style: solid;
+    border-width: 1px;
+    height: 18px;
+    border-color: Gray;
+    display: none;
+    background-color: #EDEDED;
+    float: left;
+}
+
+/* ASP BUTTON BorderStyle="None" BackColor="#00759A"
+                                            Font-Bold="True" ForeColor="White" Font-Names="VERDANA" Font-Size="X-Small"
+----------------------------------------------------------*/
+.btnSingleStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+    border-style: solid;
+    border-width: 1px;
+    height: 20px;
+    border-color: Gray;
+}
+.btncolor
+{
+    border-style: none;
+    background-color: #00759A;
+    font-weight: bold;
+    color: White;
+    font-family: Arial;
+    /*font-size: 11px;*/
+    font-size:x-small;
+    cursor: hand;
+    height: 25px;
+    width: 50px;
+}
+.btncolorlight
+{
+    border-style: none;
+    background-color: #00759A;
+    font-weight: bold;
+    color: White;
+    font-family: Arial;
+   /* font-size: 11px;*/
+    font-size:x-small;
+    cursor: hand;
+    height: 25px;
+    width: 50px;
+}
+.btnclose
+{
+    border-style: none;
+    background-color: White;
+    font-weight: bold;
+    color: #4EACC5;
+    font-family: Arial;
+    font-size: 11px;
+    cursor: hand;
+    height: 25px;
+    width: 50px;
+}
+
+/* ASP IMAGE
+----------------------------------------------------------*/
+.imgSingleStyle
+{
+    font-size: 11px;
+    font-family: Arial;
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
+}
+.imgSingleStylehidden
+{
+    font-size: 11px;
+    font-family: Arial;
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
+    display: none;
+    padding-left: 2px;
+}
+
+
+/* WATER MARK FOR TEXTBOX #FDCBCBRGB(231,216,254);
+----------------------------------------------------------*/
+.unwatermarked
+{
+    height: 18px;
+    width: 148px;
+}
+
+.watermarkedmandatory
+{
+    height: 18px;
+    padding: 2px 0 0 2px;
+    border: 1px solid #BEBEBE;
+    background-color: RGB(231,216,254);
+    color: gray;
+    font-size: 11px;
+    font-family: Arial;
+}
+.watermarkedmandatoryhidden
+{
+    height: 18px;
+    padding: 2px 0 0 2px;
+    border: 1px solid #BEBEBE;
+    background-color: RGB(231,216,254);
+    color: gray;
+    font-size: 11px;
+    font-family: Arial;
+}
+
+.watermarked
+{
+    height: 18px;
+    padding: 2px 0 0 2px;
+    border: 1px solid #BEBEBE;
+    background-color: #F0F8FF;
+    color: gray;
+    font-size: 11px;
+    font-family: Arial;
+}
+
+.watermarkedhidden
+{
+    height: 18px;
+    padding: 2px 0 0 2px;
+    border: 1px solid #BEBEBE;
+    background-color: #F0F8FF;
+    color: gray;
+    font-size: 11px;
+    font-family: Arial;
+    display: none;
+}
+
+/* AJAX COMBO BOX STYLE FFFFFF;FDCBCB
+----------------------------------------------------------*/
+
+#master_content .ajax__combobox_itemlist
+{
+    margin: 0px;
+}
+
+.AjaxToolkitStyle .ajax__combobox_inputcontainer .ajax__combobox_textboxcontainer input
+{
+    background-image: url(ComboBox/images/toolkit-bg.gif);
+    background-position: top left;
+    border: 0px none;
+    color: #FFFFFF;
+    padding: 4px 0px 3px 5px;
+    font-size: 13px;
+    height: 16px;
+    width: 240px;
+}
+.AjaxToolkitStyle .ajax__combobox_inputcontainer .ajax__combobox_buttoncontainer button
+{
+    background-image: url(ComboBox/images/toolkit-arrow.gif);
+    background-position: top left;
+    border: 0px none;
+    height: 23px;
+    width: 23px;
+}
+.AjaxToolkitStyle .ajax__combobox_itemlist
+{
+    border-color: #0F2543;
+    background-color: #EFEFEF;
+}
+
+.AquaStyle .ajax__combobox_inputcontainer .ajax__combobox_textboxcontainer input
+{
+    margin: 0;
+    background-image: url(../images/aqua-bg.gif);
+    background-position: top left;
+    border: 0px none;
+    padding: 2px 0px 0px 8px;
+    font-size: 11px;
+    height: 17px;
+    width: 150px;
+}
+.AquaStyle .ajax__combobox_inputcontainer .ajax__combobox_buttoncontainer button
+{
+    background-image: url(../images/aqua-arrow.gif);
+    background-position: top left;
+    border: 0px none;
+    height: 19px;
+    width: 19px;
+}
+.AquaStyle .ajax__combobox_itemlist
+{
+    border-color: #000000;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 100px;
+    width: 500px;
+    font-size: 11px;
+}
+.AquaStyle .ajax__combobox_itemlist li
+{
+    width: 98%;
+    font-size: 11px;
+}
+
+/*.....combox mandatory*/
+.AquaStyleMandate .ajax__combobox_inputcontainer .ajax__combobox_textboxcontainer input
+{
+    margin: 0;
+    background-image: url(../images/aqua-bg.gif);
+    background-position: top left;
+    border: 0px none;
+    padding: 2px 0px 0px 8px;
+    font-size: 11px;
+    height: 17px;
+    width: 150px;
+}
+.AquaStyleMandate .ajax__combobox_inputcontainer .ajax__combobox_buttoncontainer button
+{
+    background-image: url(../images/aqua-arrow.gif);
+    background-position: top left;
+    border: 0px none;
+    height: 19px;
+    width: 19px;
+}
+.AquaStyleMandate .ajax__combobox_itemlist
+{
+    border-color: #000000;
+    background-color: RGB(231,216,254);
+    position: absolute;
+    top: 100px;
+    width: 500px;
+    font-size: 11px;
+}
+.AquaStyleMandate .ajax__combobox_itemlist li
+{
+    width: 98%;
+    font-size: 11px;
+}
+/*..........*/
+.WindowsStyle .ajax__combobox_inputcontainer .ajax__combobox_textboxcontainer input
+{
+    /*margin: 0;*/
+    border: solid 1px #7F9DB9;
+    border-right: 0px none;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-size: 11px;
+    height: 18px;
+    background-color: #EDEDED;
+}
+.WindowsStyle .ajax__combobox_inputcontainer .ajax__combobox_buttoncontainer button
+{
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/windows-arrow.gif);
+    background-position: top left; /*border: 0px none;*/
+    border-bottom: 1px solid;
+    height: 21px;
+    width: 21px;
+}
+.WindowsStyle .ajax__combobox_itemlist
+{
+    border-color: #7F9DB9;
+    width: 98%;
+}
+.WindowsStyle .ajax__combobox_itemlist li
+{
+    width: 98%;
+    font-size: 11px;
+}
+/* HAND ICON
+----------------------------------------------------------*/
+.handShow
+{
+    cursor: hand;
+}
+
+/* HIDE BUTTON
+----------------------------------------------------------*/
+.hideButton
+{
+    display: none;
+}
+
+/* MENU BUTTON
+----------------------------------------------------------*/
+
+
+#tabs
+{
+    float: left;
+    width: 100%;
+    font-size: 10px;
+    line-height: normal;
+    border-bottom: 1px solid #666;
+    margin-bottom: 1em; /*margin between menu and rest of page*/
+    overflow: hidden;
+}
+
+#tabs ul
+{
+    margin: 0;
+    padding: 10px 10px 0 0px;
+    list-style: none;
+}
+
+#tabs li
+{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#tabs a
+{
+    float: left;
+    background: url("../images/tableftF.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 6px;
+    text-decoration: none;
+}
+
+#tabs a span
+{
+    float: left;
+    display: block;
+    background: url("../images/tabrightF.gif") no-repeat right top;
+    padding: 6px 15px 4px 6px;
+    margin-right: 2px;
+    color: #FFF;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs a span
+{
+    float: none;
+}
+
+/* End IE5-Mac hack */
+#tabs a:hover span
+{
+}
+
+#tabs a:hover
+{
+    background-position: 0% -42px;
+}
+
+#tabs a:hover span
+{
+    background-position: 100% -42px;
+}
+
+/*............*/
+#menu
+{
+    float: left;
+    width: 100%;
+    background: #efefef;
+    font-size: 10px;
+    line-height: normal;
+    border-bottom: 1px solid #666;
+}
+#menu ul
+{
+    margin: 0;
+    padding: 10px 10px 0 0px;
+    list-style: none;
+}
+#menu li
+{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+#menu a
+{
+    float: left;
+    background: url("../images/tableftF.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 4px;
+    text-decoration: none;
+}
+#menu a span
+{
+    float: left;
+    display: block;
+    background: url("../images/tabrightF.gif") no-repeat right top;
+    padding: 5px 15px 4px 6px;
+    color: #666;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#menu a span
+{
+    float: none;
+}
+/* End IE5-Mac hack */
+#menu a:hover span
+{
+    color: #FFFFFF;
+}
+#menu a:hover
+{
+    background-position: 0% -42px;
+}
+#menu a:hover span
+{
+    background-position: 100% -42px;
+}
+/*......*/
+/******   H3    */
+ul#menu2
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: auto;
+    position: relative;
+    display: block;
+    height: 36px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    background: transparent url("../images/OFF.gif") repeat-x top left;
+    font-family: Helvetica,Arial,Verdana,sans-serif;
+    border-bottom: 4px solid #004c99;
+    border-top: 1px solid #74b0c6;
+}
+ul#menu2 li
+{
+    display: block;
+    float: left;
+    margin: 0;
+    pading: 0;
+}
+ul#menu2 li a
+{
+    display: block;
+    float: left;
+    color: #6d7078;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 20px 0 20px;
+    height: 24px;
+    background: transparent url("../images/DIVIDER.gif") no-repeat top right;
+}
+ul#menu2 li a:hover
+{
+    background: transparent url("../images/HOVER.gif") no-repeat top right;
+}
+
+/*.......*/
+.divstyle
+{
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    color: Red; /*border-style:solid;border-color: Red;*/
+    border-width: 1px;
+    padding-left: 3px;
+}
+/*....autocomplete...*/
+
+/*AutoComplete flyout */
+
+
+
+
+
+/*...add edit  buttons margin-left: 257px;....*/
+
+.gradientbuttons ul
+{
+    padding: 3px 0;
+    margin-top: 1px;
+    margin-bottom: 0;
+    font: bold 13px Verdana;
+    list-style-type: none;
+    text-align: left; /*set to left, center, or right to align the menu as desired*/
+}
+.gradientbuttons li
+{
+    display: inline;
+    margin: 0;
+}
+.gradientbuttons li a
+{
+    text-decoration: none;
+    padding: 5px 7px;
+    margin-right: 5px;
+    border: 1px solid #778;
+    color: white;
+    border: 1px solid gray;
+    background: #00759A; /* #3282c2 */
+    border-radius: 8px; /*w3c border radius*/
+    box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* w3c box shadow */
+    -moz-border-radius: 8px; /* mozilla border radius */
+    -moz-box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* mozilla box shadow */
+    background: -moz-linear-gradient(center top, #a4ccec, #72a6d4 25%, #3282c2 45%, #357cbd 85%, #72a6d4); /* mozilla gradient background */
+    -webkit-border-radius: 8px; /* webkit border radius */
+    -webkit-box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* webkit box shadow */
+    background: -webkit-gradient(linear, center top, center bottom, from(#a4ccec), color-stop(25%, #72a6d4), color-stop(45%, #3282c2), color-stop(85%, #357cbd), to(#72a6d4)); /* webkit gradient background */
+}
+.gradientbuttons li a:hover
+{
+    color: lightyellow;
+}
+
+/*menu style */
+/* For Search Screen */
+.spanSpace
+{
+    padding-left: 0px;
+}
+
+.handShow1
+{
+    cursor: pointer;
+}
+
+.buttonSearch
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    cursor: pointer;
+    color: #4EACC5;
+}
+.buttonSearch:hover
+{
+    background-color: Red;
+}
+.labelSearch
+{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #4EACC5;
+}
+.labelHeading
+{
+    font-size: 18px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #4EACC5;
+}
+.txtSearch
+{
+    font-size: 11px;
+    font-family: Arial;
+    border-style: solid;
+    border-width: 1px;
+    height: 18px;
+    border-color: #4EACC5;
+}
+.labelSideHeading
+{
+    font-size: 10px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #4EACC5;
+}
+.DivGrid
+{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-style: solid;
+    border-width: 1px;
+    border-color: Gray;
+    background-color: White;
+    vertical-align: top;
+    font-family: verdana;
+    font-size: 10px;
+}
+.btnhide
+{
+    display: none;
+}
+.mGrid
+{
+    /*width: 100%;*/
+    background-color: #fff;
+    margin: 5px 0 10px 5px;
+    border: solid 1px #525252;
+    border-collapse: collapse;
+}
+.mGrid td
+{
+    padding: 2px;
+    border: solid 1px #c1c1c1;
+    color: #717171;
+    font-family: verdana;
+    font-size: 10px;
+}
+.mGrid th
+{
+    padding: 4px 2px;
+    color: #fff; /*background: #424242;*/
+    background-color: Gray;
+    border-left: solid 1px #525252; /*font-size: 0.9em;*/
+    vertical-align: top;
+    font-family: verdana;
+    font-size: 10px;
+}
+.mGrid .alt
+{
+    background: #fcfcfc;
+}
+.mGrid .pgr
+{
+    background: #4eacc5;
+}
+.mGrid .pgr table
+{
+    margin: 5px 0;
+}
+.mGrid .pgr td
+{
+    border-width: 0;
+    padding: 0 6px;
+    border-left: solid 1px #666;
+    font-weight: bold;
+    color: #fff;
+    line-height: 12px;
+}
+.mGrid .pgr a
+{
+    color: #666;
+    text-decoration: none;
+}
+.mGrid .pgr a:hover
+{
+    color: #000;
+    text-decoration: none;
+}
+
+/*search*/
+.msearchGrid
+{
+    /*width: 100%;*/
+    background-color: #fff;
+    margin: 5px 0 10px 5px;
+    border: solid 1px #525252;
+    border-collapse: collapse;
+}
+.msearchGrid td
+{
+    padding: 2px; /*border: none;*/ /*border: solid 1px #c1c1c1;*/
+    color: #717171;
+    font-family: verdana;
+    font-size: 10px;
+}
+
+.msearchGrid th
+{
+    padding: 4px 2px;
+    color: #fff; /*background: #424242;*/ /* background-color: Gray;00759A*/ /* border-left: solid 1px #525252;*/ /*font-size: 0.9em;*/
+    background-color: #00759A;
+    vertical-align: top;
+    font-family: verdana;
+    font-size: 10px;
+}
+.msearchGrid .alt
+{
+    background: #fcfcfc;
+}
+.msearchGrid .pgr
+{
+    background: #4eacc5;
+}
+.msearchGrid .pgr table
+{
+    margin: 0px 0;
+}
+.msearchGrid .pgr td
+{
+    border-width: 0;
+    padding: 0 0px;
+    border-left: solid 1px #666;
+    font-weight: bold;
+    color: #fff;
+    line-height: 12px;
+}
+.msearchGrid .pgr a
+{
+    color: #666;
+    text-decoration: none;
+}
+.msearchGrid .pgr a:hover
+{
+    color: #000;
+    text-decoration: none;
+}
+.checktd
+{
+    border: solid 1px #c1c1c1;
+}

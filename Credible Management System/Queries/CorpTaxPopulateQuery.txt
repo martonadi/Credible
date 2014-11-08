@@ -1,0 +1,14 @@
+﻿SELECT     
+
+CredentialId AS CredentialID,
+--WorkTypeIdHC AS WorkTypeIDHC1, 
+WTCT.Work_Type AS WorkTypeValueCorp,
+WTCT.WorkTypeId AS WorkTypeIDCorp
+
+FROM         
+
+tblCredential as c
+
+LEFT JOIN tblWorkType AS WTCT ON WTCT.WorkTypeId=C.WorkType_CorpTax
+
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCREDENTIALID)

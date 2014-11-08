@@ -1,0 +1,20 @@
+﻿SELECT     
+
+CredentialId AS CredentialID,
+
+
+
+--ClientTypeIdIPF AS ClientTypeIDIPF1, 
+CTIPF.Client_Type AS ClientTypeIdIPF, 
+ClientTypeId AS ClientTypeIDIPF1 
+
+FROM         
+
+tblCredential as c
+
+
+LEFT JOIN tblClientType AS CTIPF ON CTIPF.ClientTypeId=C.ClientTypeIdIPF
+
+
+
+WHERE  C.DeleteFlag='0' and C.CREDENTIALID in (strCREDENTIALID)
